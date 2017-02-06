@@ -6,10 +6,10 @@ person1.jpg, 1 , 1
 person2.jpg, 1 , 1
 person3.jpg, 1 , 1
 person4.jpg, 1 , 1
-bal1.jpg, 2, 2
-bal2.jpg, 2, 2
-bal3.jpg, 2, 2
-bal4.jpg, 2, 2
+ball1.jpg, 2, 2
+ball2.jpg, 2, 2
+ball3.jpg, 2, 2
+ball4.jpg, 2, 2
 car1.jpg, 4, 4
 car2.jpg, 4, 4
 car3.jpg, 4, 4
