@@ -268,10 +268,10 @@ void MainWindow::on_imageNameList_itemClicked(QListWidgetItem *item)
 {
     QString selectedImageName = item->text();
     //qDebug() << selectedImageName;
-    QString fileName(pathName + "/images/"+selectedImageName);
+    //QString fileName(pathName + "/images/"+selectedImageName);
 
     QImage *imageObject = new QImage();
-    imageObject->load(fileName);
+    imageObject->load(selectedImageName);
     QPixmap image = QPixmap::fromImage(*imageObject);
     QGraphicsScene *scene = new QGraphicsScene(this);
     scene->addPixmap(image);

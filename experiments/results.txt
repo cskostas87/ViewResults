@@ -1,16 +1,16 @@
-animal1.jpg, 3 , 4
-animal2.jpg, 3 , 2
-animal3.jpg, 3 , 2
-animal4.jpg, 3 , 1
-person1.jpg, 1 , 1
-person2.jpg, 1 , 1
-person3.jpg, 1 , 1
-person4.jpg, 1 , 1
-ball1.jpg, 2, 2
-ball2.jpg, 2, 2
-ball3.jpg, 2, 2
-ball4.jpg, 2, 2
-car1.jpg, 4, 4
-car2.jpg, 4, 4
-car3.jpg, 4, 4
-car4.jpg, 4, 4
+/home/gountakos/Desktop/ViewResults/experiments/images/animal/animal4.jpg, 3 , 4
+/home/gountakos/Desktop/ViewResults/experiments/images/animal/animal1.jpg, 3 , 2
+/home/gountakos/Desktop/ViewResults/experiments/images/animal/animal3.jpg, 3 , 2
+/home/gountakos/Desktop/ViewResults/experiments/images/animal/animal2.jpg, 3 , 1
+/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball4.jpg, 1 , 1
+/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball3.jpg, 1 , 1
+/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball1.jpg, 1 , 1
+/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball2.jpg, 1 , 1
+/home/gountakos/Desktop/ViewResults/experiments/images/person/person3.jpg, 2, 2
+/home/gountakos/Desktop/ViewResults/experiments/images/person/person4.jpg, 2, 2
+/home/gountakos/Desktop/ViewResults/experiments/images/person/person2.jpg, 2, 2
+/home/gountakos/Desktop/ViewResults/experiments/images/person/person1.jpg, 2, 2
+/home/gountakos/Desktop/ViewResults/experiments/images/car/car1.jpg, 4, 4
+/home/gountakos/Desktop/ViewResults/experiments/images/car/car3.jpg, 4, 4
+/home/gountakos/Desktop/ViewResults/experiments/images/car/car4.jpg, 4, 4
+/home/gountakos/Desktop/ViewResults/experiments/images/car/car2.jpg, 4, 4
