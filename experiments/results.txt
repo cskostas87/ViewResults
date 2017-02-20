@@ -1,11 +1,11 @@
-/home/gountakos/Desktop/ViewResults/experiments/images/animal/animal4.jpg, 3 , 4
-/home/gountakos/Desktop/ViewResults/experiments/images/animal/animal1.jpg, 3 , 2
+/home/gountakos/Desktop/ViewResults/experiments/images/animal/animal4.jpg, 3 , 4, 0.32, 3, 0.22, 2, 0.12
+/home/gountakos/Desktop/ViewResults/experiments/images/animal/animal1.jpg, 3 , 3, 0.42, 2, 0.32, 1, 0.13
 /home/gountakos/Desktop/ViewResults/experiments/images/animal/animal3.jpg, 3 , 2
-/home/gountakos/Desktop/ViewResults/experiments/images/animal/animal2.jpg, 3 , 1
-/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball4.jpg, 1 , 1
-/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball3.jpg, 1 , 1
-/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball1.jpg, 1 , 1
-/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball2.jpg, 1 , 1
+/home/gountakos/Desktop/ViewResults/experiments/images/animal/animal2.jpg, 3 , 2, 0.32, 4, 0.22, 3, 0.15
+/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball4.jpg, 1 , 1, 0.32, 3, 0.22, 2, 0.12
+/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball3.jpg, 1 , 1, 0.42, 2, 0.32, 1, 0.13
+/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball1.jpg, 1 , 1, 0.32, 1, 0.22, 4, 0.14
+/home/gountakos/Desktop/ViewResults/experiments/images/ball/ball2.jpg, 1 , 1, 0.32, 4, 0.22, 3, 0.15
 /home/gountakos/Desktop/ViewResults/experiments/images/person/person3.jpg, 2, 2
 /home/gountakos/Desktop/ViewResults/experiments/images/person/person4.jpg, 2, 2
 /home/gountakos/Desktop/ViewResults/experiments/images/person/person2.jpg, 2, 2

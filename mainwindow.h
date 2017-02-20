@@ -3,10 +3,10 @@
 
 #include <QMainWindow>
 #include <QPushButton>
-#include<QString>
+#include <QString>
 #include <QFileInfo>
 #include "datatypes.h"
-#include<QListWidgetItem>
+#include <QListWidgetItem>
 
 using namespace std;
 
@@ -34,6 +34,7 @@ public:
     void ColorConfMatrix(QList<ClassLabel> classes);
     void ClearPreviewImage();
     QString Instructions(QStringList instructions);
+    void ShowCoefficients(QString imageName);
 private slots:
 
     void on_pushButton_clicked();

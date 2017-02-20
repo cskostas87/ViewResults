@@ -13,6 +13,9 @@
 #include <QImage>
 #include <QGraphicsScene>
 #include <QDesktopWidget>
+#include <QtCharts>
+
+using namespace QtCharts;
 using namespace std;
 
 QString pathName;
@@ -29,14 +32,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
                    "*** classes.txt: this file contains the names of classes per line\n"
                    "        e.g : person 1\n\n"
                    "*** results.txt: this file contains the results separated by comma\n"
-                   "        e.g : animal1.jpg, 3 , 4 (imageName, truth label, predict label)\n\n"
-                   "*** FOLDER: 'images' contains all images which names shown in results.txt";
+                   "        e.g : path\\animal1.jpg, 3 , 4, 0.42, 2, 0.45, 3, 0.05 \n"
+                   "(imagePath, truth label, predict label, coef1, predLabel2, coef2, predLabel3, coef3)\n\n";
 
 
     myQMessageBox.setText(text);
     QRect scr = QApplication::desktop()->screenGeometry();
     myQMessageBox.move(scr.center()-rect().center());
     myQMessageBox.exec();
+
 }
 
 MainWindow::~MainWindow()
@@ -68,7 +72,7 @@ void MainWindow::UpdateConfusionMatrix()
     {
       //qDebug() << (*stlIter).getImageName();
         QString truth = (*stlIter).getTruthLabel();
-        QString predict = (*stlIter).getPredictLabel();
+        QString predict = (*stlIter).getPredictLabel1();
 
         int row = truth.toInt()-1;
         int column = predict.toInt()-1;
@@ -100,7 +104,14 @@ QList<Result> MainWindow::GetResults()
     {
         //qDebug() << text;
         QStringList temp = text.split(QRegExp(","));
-        Result tempResult(temp.at(0),temp.at(1),temp.at(2));
+        for (int i=0; i<8; i++)
+        {
+            if(i >= temp.length())
+            {
+                temp.append("0");
+            }
+        }
+        Result tempResult(temp.at(0), temp.at(1), temp.at(2), temp.at(3), temp.at(4), temp.at(5), temp.at(6), temp.at(7));
         resultList.append(tempResult);
     }
     return resultList;
@@ -197,6 +208,12 @@ void MainWindow::ClearPreviewImage()
     QGraphicsScene *scene = new QGraphicsScene(this);
     scene->clear();
     ui->previewImage->setScene(scene);
+    QLayoutItem *child;
+    ui->scrollArea->takeWidget();
+    //while ((child = ui->scrollArea->layout()->takeAt(0)) != 0)
+    //{
+    //    delete child->widget(); // delete Layout Item's underlying widget
+    //}
 }
 
 void MainWindow::ClearGui()
@@ -213,6 +230,55 @@ void MainWindow::InitGui()
 {
     ui->dirPathTextEdit->setReadOnly(true);
     ui->grid->setEditTriggers(QAbstractItemView::NoEditTriggers);
+}
+
+void MainWindow::ShowCoefficients(QString imageName)
+{
+    Result tempResult;
+    QList<Result>::const_iterator stlIter;
+    for( stlIter = results.begin(); stlIter != results.end(); ++stlIter )
+    {
+      //qDebug() << (*stlIter).getImageName();
+        tempResult =(*stlIter);
+        if(tempResult.getImageName()==imageName)
+        {
+            break;
+        }
+    }
+
+    //Result currResult = results.find
+    QBarSet *set0 = new QBarSet("Coeff1");
+    QBarSet *set1 = new QBarSet("Coeff2");
+    QBarSet *set2 = new QBarSet("Coeff3");
+
+    *set0 << tempResult.getcoefficient1().toFloat() << 0.0 << 0.0;
+    *set1 << 0.0 << tempResult.getcoefficient2().toFloat() << 0.0;
+    *set2 << 0.0 << 0.0 << tempResult.getcoefficient3().toFloat() ;
+
+    QStackedBarSeries *series = new QStackedBarSeries();
+    series->append(set0);
+    series->append(set1);
+    series->append(set2);
+
+    QChart *chart = new QChart();
+    chart->addSeries(series);
+    chart->setTitle("Coefficient Probabilities");
+    chart->setAnimationOptions(QChart::SeriesAnimations);
+
+    QStringList categories;
+    categories << tempResult.getPredictLabel1() << tempResult.getPredictLabel2()
+               << tempResult.getPredictLabel3();
+    QBarCategoryAxis *axis = new QBarCategoryAxis();
+    axis->append(categories);
+    chart->createDefaultAxes();
+    chart->setAxisX(axis, series);
+    chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
+
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+
+    ui->scrollArea->setWidget(chartView);
 }
 
 /* EVENTS   */
@@ -249,7 +315,7 @@ void MainWindow::on_grid_cellClicked(int row, int column)
             {
               //qDebug() << (*stlIter).getImageName();
                 QString truth = (*stlIter).getTruthLabel();
-                QString predict = (*stlIter).getPredictLabel();
+                QString predict = (*stlIter).getPredictLabel1();
 
                 int truthLabel = truth.toInt();
                 int predictLabel = predict.toInt();
@@ -278,5 +344,7 @@ void MainWindow::on_imageNameList_itemClicked(QListWidgetItem *item)
     scene->setSceneRect(image.rect());
     ui->previewImage->setScene(scene);
     ui->previewImage->update();
+
+    ShowCoefficients(selectedImageName);
 }
 

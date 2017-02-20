@@ -1,13 +1,14 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-02-05T19:28:33
+# Project created by QtCreator 2017-02-20T18:14:05
 #
 #-------------------------------------------------
+
 QT       += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = ViewResults
+TARGET = ViewResultsApp
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -27,5 +28,5 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     datatypes.h
-FORMS    += mainwindow.ui
 
+FORMS    += mainwindow.ui
