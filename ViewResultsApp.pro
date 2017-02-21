@@ -4,9 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core gui charts
+QT       += core gui charts widgets
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 5): QT += widgets
 
 TARGET = ViewResultsApp
 TEMPLATE = app

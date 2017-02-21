@@ -14,7 +14,7 @@
 #include <QGraphicsScene>
 #include <QDesktopWidget>
 #include <QtCharts>
-
+#include <QtWidgets/QScrollArea>
 using namespace QtCharts;
 using namespace std;
 
@@ -277,7 +277,6 @@ void MainWindow::ShowCoefficients(QString imageName)
 
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
-
     ui->scrollArea->setWidget(chartView);
 }
 

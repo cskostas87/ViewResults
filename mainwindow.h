@@ -1,12 +1,12 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QPushButton>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
 #include <QString>
 #include <QFileInfo>
 #include "datatypes.h"
-#include <QListWidgetItem>
+#include <QtWidgets/QListWidgetItem>
 
 using namespace std;
 
